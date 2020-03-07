@@ -1,31 +1,33 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title> Test</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="test_style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
- <script> function validateForm() {
-   // var x = document.forms["myForm"]["terms-conditions-check"].value;
-    alert("Name must be filled out"+x );
-    return true;  
-} 
-</script>
- 
-</head> 
-<body>	
-	<div class="container">
-		<h2 class="container" >Test</h2>	
-		<p id="test"></p> 
-		<form class="needs-validation"  name="myForm" action="test.html" onsubmit="return validateForm()" method="post">
-			<script src="test_menu.js"></script> 
-			<button class="btn btn-primary btn-sm btn-rounded" type="submit1">Submit form</button>
- 		</form>
-	</div> 
-	<script src="open_menu.js"></script> 
-</body>
+   <head>
+      <title> Test</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="test_style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <script> function validateForm() {
+           var x = document.forms["myForm"]["terms-conditions-check"].value;
+          alert("Choose : "+x );
+          return true;  
+         } 
+      </script>
+   </head>
+   <body>
+      <div class="container">
+         <h2 class="container" >Test</h2>
+         <p id="test"></p>
+         <form class="needs-validation"  name="myForm" action="test.html" onsubmit="return validateForm()" method="post">
+            <script src="test_menu.js"></script> 
+            <button class="btn btn-primary btn-sm btn-rounded" type="submit1">Submit form</button>
+         </form>
+      </div>
+      <script src="open_menu.js"></script> 
+   </body>
 </html>
+
