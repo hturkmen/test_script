@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head> 
+<body>
+<div class="container">
+    <h2 class="container" >Test</h2>
+<p id="test"></p>
+ <form class="needs-validation" novalidate>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var text = JSON.parse(this.responseText);
+    for (var sira in text.pages) { 	// 0,1,2,3,..12
+		var myObj = text.pages[sira]
+		var title = myObj.title
+		var itemsObj= myObj.items		
+		document.getElementById("test").innerHTML += title +' : ';
+		for (var items in itemsObj){
+			var field = itemsObj[items]
+			document.getElementById("test").innerHTML += "<label for=" + field.name +">" + field.label +"</label> &nbsp;"
+			var choises_txt="<select name=" + field.name +"> "
+			for (var selopt in field.choices){
+				choises_txt += "<option value="+field.choices[selopt]+">"+field.choices[selopt].value+"</option>"
+			}
+			choises_txt+=" </select>"	
+			document.getElementById("test").innerHTML += choises_txt				 
+		 }
+		 document.getElementById("test").innerHTML += "<br>";		 	
+	}
+  }
+};
+xmlhttp.open("GET", "https://1dds21470e.execute-api.eu-west-2.amazonaws.com/dev/test/1", true);
+xmlhttp.send();
+</script>
+ <button class="btn btn-primary btn-sm btn-rounded" type="submit">Submit form</button>
+    </form>
+  </div>
+ 
+</body>
+</html>
